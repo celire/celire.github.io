@@ -1,4 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* the above are good defaults to have */
+
 #milan {
-	width: 200px;
-	height: 200px;
+  height: 200px;
+  display: block;
+  margin: auto;
 }
