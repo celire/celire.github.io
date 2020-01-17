@@ -26,6 +26,15 @@ body {
 	width: 200px;
 	text-align: center;
 	background-color: #ffffff;
+	box-sizing: border-box;
+}
+
+@media screen and (max-width: 1000px) {
+	.menu {
+		height: auto;
+		width: 100%;
+		flex-direction: row;
+	}
 }
 
 .menu-item {
@@ -49,9 +58,10 @@ body {
 }
 
 .displayed-content {
-	flex: 1 1 400px;
+	flex: 1 1 300px;
 	max-width: 1000px;
-	min-width: 400px;
+	min-width: 300px;
+	margin: 0 1em;
 }
 
 p {
@@ -85,6 +95,7 @@ a:hover {
 
 .content.about {
 	align-items: center;
+	justify-content: center;
 }
 
 .content.home .text,
@@ -97,7 +108,8 @@ a:hover {
 .home-image {
 	margin: 3em;
 	min-width: 40%;
-	background: url("../img/home.jpg") no-repeat center;
+	max-width: 500px;
+	background: url("../img/home.jpg") no-repeat top center;
 	background-size: cover;
 	border-radius: 1em;
 	box-shadow: 10px 10px #c0e03c;
@@ -106,6 +118,51 @@ a:hover {
 .about-image {
 	margin-right: 3em;
 	min-width: 30%;
+	max-width: 200px;
 	border-radius: 50%;
 	box-shadow: 10px 10px #c0e03c;
+}
+
+@media screen and (min-width: 769px) and (max-width: 999px) {
+	body {
+		font-size: 16px;
+	}
+
+	.menu {
+		margin: 0;
+	}
+
+	.container {
+		display: block;
+	}
+
+	.headline {
+		margin-bottom: 1em;
+	}
+
+	.displayed-content {
+		margin: 1em;
+	}
+
+	.content.home,
+	.content.about {
+		/* Remove flex */
+		display: block;
+	}
+
+	.about-image-wrapper {
+		text-align: center;
+	}
+
+	.home-image {
+		width: 200px;
+		height: 300px;
+		margin: 1em auto;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	body {
+		font-size: 12px;
+	}
 }
