@@ -1,19 +1,111 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+body {
+	height: 100vh;
+	background-color: #d9cef4;
+	font-family: "Muli", sans-serif;
+	/* font-family: "PT Sans", sans-serif; */
+	font-size: 18px;
+	margin: 0;
 }
 
-html, body {
-  height: 100%;
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
 }
 
-/* the above are good defaults to have */
+.menu {
+	flex: 0 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-right: 2em;
+	padding-left: 2em;
+	height: 100%;
+	width: 200px;
+	text-align: center;
+	background-color: #ffffff;
+}
 
-#milan {
-  height: 200px;
-  display: block;
-  margin: auto;
+.menu-item {
+	transition: all 200ms ease-in-out;
+	padding: 0 0.3em;
+	margin: 0.7em auto;
+	font-size: 1.1em;
+	text-transform: uppercase;
+	font-family: "PT Sans", sans-serif;
+	border-bottom: 2px solid transparent;
+}
+
+.menu-item:hover {
+	cursor: pointer;
+	color: #de2149;
+	border-bottom: 2px solid #de2149;
+}
+
+.menu-item.active {
+	border-bottom: 2px solid #de2149;
+}
+
+.displayed-content {
+	flex: 1 1 400px;
+	max-width: 1000px;
+	min-width: 400px;
+}
+
+p {
+	line-height: 1.5;
+}
+
+a {
+	transition: all 200ms ease-in-out;
+	color: #de2149;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.headline {
+	font-size: 1.6em;
+	margin-bottom: 3em;
+}
+
+.template {
+	display: none;
+}
+
+.content.home,
+.content.about {
+	display: flex;
+	height: 100vh;
+}
+
+.content.about {
+	align-items: center;
+}
+
+.content.home .text,
+.content.about .text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.home-image {
+	margin: 3em;
+	min-width: 40%;
+	background: url("../img/home.jpg") no-repeat center;
+	background-size: cover;
+	border-radius: 1em;
+	box-shadow: 10px 10px #c0e03c;
+}
+
+.about-image {
+	margin-right: 3em;
+	min-width: 30%;
+	border-radius: 50%;
+	box-shadow: 10px 10px #c0e03c;
 }

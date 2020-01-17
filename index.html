@@ -1,80 +1,151 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="utf-8" />
-  <meta name="Rui Su" content="Rui Su's Page" />
-  <title>Rui Su</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="google-site-verification" content="wz_Rbs79XZ85Sk-p81ObKMdMwc_lPjQ3QWPjMsnaNFU" />
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="Rui Su" content="Rui Su's Page" />
+		<title>Rui Su - pharmacist, writer & digital health entrepreneur</title>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+		<meta
+			name="google-site-verification"
+			content="wz_Rbs79XZ85Sk-p81ObKMdMwc_lPjQ3QWPjMsnaNFU"
+		/>
 
-  <!-- attach CSS styles -->
-  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
-  <link href="css/style.css" rel="stylesheet" />
+		<!-- CSS styles -->
+		<link href="css/main.css" rel="stylesheet" />
 
-  <!-- Google Webfonts -->
-  <link href="https://fonts.googleapis.com/css?family=PT+Sans:700|PT+Serif" rel="stylesheet">
+		<!-- Google Webfonts -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Muli:500,700|PT+Sans&display=swap"
+			rel="stylesheet"
+		/>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109113812-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109113812-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
 
-    gtag('config', 'UA-109113812-1');
-  </script>
-</head>
-<body>
+			gtag("config", "UA-109113812-1");
+		</script>
+		<script>
+			window.addEventListener("DOMContentLoaded", event => {
+				var menuItems = document.getElementsByClassName("menu-item");
+				displayContent("home", menuItems);
 
-<!--  BODY PAGE CONTENT -->
+				for (var i = 0; i < menuItems.length; i++) {
+					menuItems[i].addEventListener("click", event => {
+						var id = event.target.getAttribute("data-id");
+						displayContent(id, menuItems);
+					});
+				}
+			});
 
-<div class="container background">
-  <div class="intro-container">
-    <h1 class="sans-serif name-header">Rui Su</h1>
-    <p>PharmD 2018 passionate about
-      <br/>
-      healthcare x technology</p>
-  </div>
-  <div class="info-container">
-    <p class="info-header">
-      Currently
-    </p>
-    <ul class="no-style">
-      <li>
-        Co-Founder at <a target="_blank" href="http://rozelabs.com/">Roze Labs</a>
-      </li>
-    </ul>
-    <p class="info-header">
-      Writing & Interviews
-    </p>
-    <ul class="no-style">
-      <li>
-        <a target="_blank" href="http://blog.thinkresearch.com/transitions-care-change-starts/">Thinkathon</a>
-      </li>
-      <li>
-        <a target="_blank" href="https://www.opencityinc.com/why-roze-won-hack4health-2-0/#.WDPQFZMrJE5">Hack4Health</a>
-      </li>
-      <li>
-        <a target="_blank" href="https://drkarenlee.ca/hack4health-team-roze-receives-ms-society-funding-to-develop-new-fatigue-management-resource/">Roze Labs</a>
-      </li>
-      <li>
-        <a target="_blank" href="https://uwaterloo.ca/pharmacy/news/business-business-health-company-pitch-wins-annual">Pharmasave Business Competition</a>
-      </li>
-    </ul>
-    <p class="info-header">
-      Connect With Me
-    </p>
-    <ul class="no-style">
-      <li>
-        <a target="_blank" href="https://www.linkedin.com/in/surui/">LinkedIn</a>
-      </li>
-      <li>
-        <a target="_blank" href="mailto:me@surui.ca">Email</a>
-      </li>
-    </ul>
-  </div>
-</div>
+			function displayContent(id, items) {
+				var content = document.querySelector(`.template[data-id="${id}"`).innerHTML;
+				document.getElementById("displayed-content").innerHTML = content;
 
-<!-- attach JavaScript -->
-</body>
+				for (var i = 0; i < items.length; i++) {
+					if (items[i].getAttribute("data-id") === id) {
+						items[i].classList.add("active");
+					} else {
+						items[i].classList.remove("active");
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<!--  BODY PAGE CONTENT -->
+		<div class="container">
+			<div class="menu">
+				<div class="menu-item" data-id="home">Home</div>
+				<div class="menu-item" data-id="about">About</div>
+				<div class="menu-item" data-id="work">Work</div>
+				<div class="menu-item" data-id="contact">Contact</div>
+			</div>
+			<div id="displayed-content" class="displayed-content"></div>
+			<div class="template" data-id="home">
+				<div id="home" class="content home">
+					<div class="text">
+						<p class="headline">
+							<b>Rui Su</b> is a <br />pharmacist, writer & <br />digital health
+							entrepreneur.
+						</p>
+						<p>
+							I am currently redesigning pharmacy care at MedMe Health.
+						</p>
+						<p>
+							Previously: freelance writer, pharmacy continuing education, multiple
+							sclerosis research, clinical pharmacy, & University of Waterloo.
+						</p>
+						<p>
+							To get in touch, write to:
+							<a href="mailto:me@surui.ca" target="_blank">me@surui.ca</a>
+						</p>
+					</div>
+					<div class="home-image"></div>
+				</div>
+			</div>
+			<div class="template" data-id="about">
+				<div id="about" class="content about">
+					<div>
+						<img src="./img/about.jpg" class="about-image" />
+					</div>
+					<div class="text">
+						<p>
+							Hi, I’m Rui.
+						</p>
+						<p>
+							Redesigning the healthcare experience with a pharmacist lens. Currently
+							based in Toronto. Alumni of University of Waterloo.
+						</p>
+						<p>
+							Intrigued by humanities, design-thinking, philosophy, food, photography,
+							and loving kindness.
+						</p>
+						<p>
+							Seeking to leverage technology to improve the health of underprivileged
+							and underserved populations.
+						</p>
+						<p>
+							<!-- Follow my musings on <a href="#">Medium</a> -->
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="template" data-id="work">
+				<div id="work" class="content work">
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel suscipit
+						justo. Quisque porttitor consectetur diam at commodo. Vivamus sed erat
+						mauris. Sed bibendum leo id pellentesque consectetur. Lorem ipsum dolor sit
+						amet, consectetur adipiscing elit. Nullam sagittis neque lorem, sit amet
+						aliquet augue porttitor vel. Aliquam tempus lorem massa, a bibendum risus
+						scelerisque id. Donec ligula dui, porttitor vel sollicitudin eget, tempor et
+						ex. Mauris ut pharetra orci, ac mollis arcu. Donec a sollicitudin erat.
+						Vestibulum fringilla feugiat enim a suscipit. Nunc quis lectus faucibus,
+						vehicula augue gravida, venenatis ex.
+					</p>
+				</div>
+			</div>
+			<div class="template" data-id="contact">
+				<div id="contact" class="content contact">
+					<p>
+						Interested in chatting or collaborating? <br />Send me an email:
+						<a href="mailto:me@surui.ca" target="_blank">me@surui.ca</a>
+					</p>
+					<p>
+						Also find me on: [ linkedin logo ] , [ twitter logo ], [instagram logo]
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- attach JavaScript -->
+	</body>
 </html>
