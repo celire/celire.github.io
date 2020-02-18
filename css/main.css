@@ -1,6 +1,6 @@
 body {
 	height: 100vh;
-	background-color: #d9cef4;
+	background-color: #f7ecda;
 	font-family: "Muli", sans-serif;
 	/* font-family: "PT Sans", sans-serif; */
 	font-size: 18px;
@@ -21,9 +21,9 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	margin-right: 2em;
-	padding-left: 2em;
+	padding-left: 1em;
 	height: 100%;
-	width: 200px;
+	width: 250px;
 	text-align: center;
 	background-color: #ffffff;
 	box-sizing: border-box;
@@ -112,7 +112,7 @@ a:hover {
 	background: url("../img/home.jpg") no-repeat top center;
 	background-size: cover;
 	border-radius: 1em;
-	box-shadow: 10px 10px #c0e03c;
+	box-shadow: 5px 5px #ffffff;
 }
 
 .about-image {
@@ -120,7 +120,7 @@ a:hover {
 	min-width: 30%;
 	max-width: 200px;
 	border-radius: 50%;
-	box-shadow: 10px 10px #c0e03c;
+	box-shadow: 5px 5px #362511;
 }
 
 @media screen and (min-width: 769px) and (max-width: 999px) {
