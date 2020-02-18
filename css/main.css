@@ -120,7 +120,7 @@ a:hover {
 	min-width: 30%;
 	max-width: 200px;
 	border-radius: 50%;
-	box-shadow: 5px 5px #362511;
+	box-shadow: 2px 2px #ffffff;
 }
 
 @media screen and (min-width: 769px) and (max-width: 999px) {
