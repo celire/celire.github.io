@@ -1,7 +1,7 @@
 body {
 	height: 100vh;
 	background-color: #f7ecda;
-	font-family: "Muli", sans-serif;
+	font-family: "Noto Sans", sans-serif;
 	/* font-family: "PT Sans", sans-serif; */
 	font-size: 18px;
 	margin: 0;
@@ -43,7 +43,7 @@ body {
 	margin: 0.7em auto;
 	font-size: 1.1em;
 	text-transform: uppercase;
-	font-family: "PT Sans", sans-serif;
+	font-family: "Noto Sans", sans-serif;
 	border-bottom: 2px solid transparent;
 }
 
@@ -121,6 +121,10 @@ a:hover {
 	max-width: 200px;
 	border-radius: 50%;
 	box-shadow: 2px 2px #ffffff;
+}
+
+.icons {
+	font-size: 150%;
 }
 
 @media screen and (min-width: 769px) and (max-width: 999px) {
